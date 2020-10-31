@@ -1,0 +1,13 @@
+---
+title: "Communications"
+author: "Henry Stoddard"
+date: "10/31/2020"
+output: html_document
+---
+# This page contains my contact information!
+
+If you wish to contact me, please feel free to do so through any of the below methods:
+
+[Github](https://github.com/hms2187)
+[Email](hms2187@cumc.columbia.edu)
+[Linkedin](https://www.linkedin.com/in/henry-stoddard-4aa726b9/) 
