@@ -13,4 +13,4 @@ navbar:
       href: communications.html
 output:
   html_document:
-    theme: cerulean
+    theme: yeti
