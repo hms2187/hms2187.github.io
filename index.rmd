@@ -9,3 +9,4 @@ Look at the communications page for contact information.
 [Communications](communications.html)
 
 Here is a dashboard of NYC restaurant inspections!
+[Dashboard](dashboard_template.html)

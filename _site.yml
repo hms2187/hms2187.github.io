@@ -11,6 +11,8 @@ navbar:
       href: experience.html
     - text: "Communications"
       href: communications.html
+    - text: "Dashboard"
+      href: dashboard_template.html
 output:
   html_document:
     theme: yeti
