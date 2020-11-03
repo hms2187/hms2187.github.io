@@ -1,0 +1,61 @@
+---
+title: "Restaurant Inspections from NYC"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(htmlwidgets)
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+
+data("rest_inspec")
+inspection_df =
+  rest_inspec %>% 
+  janitor::clean_names() %>% 
+  select(boro, critical_flag, grade, inspection_date, score)%>%
+  drop_na()
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Scatter Plot showing inspection score by date in Manhattan only
+
+```{r}
+scatter_plot =
+  inspection_df %>% 
+  filter(boro == "MANHATTAN") %>% 
+  plot_ly(x=~inspection_date, y=~score, alpha = .5, type = "scatter"
+          , mode = "markers")
+scatter_plot
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Bar Chart showing average inspection score by boro
+
+```{r}
+bar_plot = 
+  inspection_df %>% 
+  group_by(boro) %>% 
+  mutate(avg_score = mean(score)) %>% 
+  plot_ly(x=~boro, y=~avg_score, color=~boro, type = "bar")
+bar_plot
+```
+
+### Box Plot showing score by boro
+
+```{r}
+box_plot =
+  inspection_df %>% 
+  group_by(boro) %>% 
+  plot_ly(x=~boro, y=~score, color =~boro, type = "box")
+box_plot
+```
+
